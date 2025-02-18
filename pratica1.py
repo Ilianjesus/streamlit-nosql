@@ -1,7 +1,5 @@
 import pandas as pd
 import streamlit as st
-import datetime
-import matplotlib.pyplot as plt
 import numpy as np
 
 #Create title to the web app
