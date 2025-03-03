@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 
 # Title
 st.title('Data Analysis of TV Shows')
+# Logo
+st.image('Max_Education.png', width=200)
 
 # Función con caché para cargar los datos
 @st.cache_data
