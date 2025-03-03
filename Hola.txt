@@ -1,0 +1,92 @@
+
+# Explicación del gráfico
+st.write("""
+    El histograma muestra la distribución de las calificaciones promedio (`vote_average`) de los programas de TV en el dataset. 
+    Cada barra representa el número de programas que tienen una calificación promedio en un rango específico. 
+    En este caso, las calificaciones están en un rango de 0 a 10, donde las calificaciones más altas indican una mayor aceptación o 
+    popularidad de un programa. Un pico en el histograma podría sugerir que la mayoría de los programas en el dataset tienen 
+    calificaciones similares, mientras que una distribución más uniforme indicaría una mayor variabilidad en las calificaciones.
+""")
+
+
+
+# Explicación del gráfico
+st.write("""
+    Este gráfico de barras muestra la calificación promedio (`vote_average`) de los programas de TV en relación con tres de los géneros 
+    más populares en el dataset. El eje X representa los géneros, y el eje Y muestra la calificación promedio para los programas de 
+    ese género. Esto te permite comparar rápidamente cómo se perciben los programas dentro de diferentes géneros, con géneros como 
+    acción, comedia o drama mostrando cómo varían sus calificaciones promedio en una escala de 1 a 10.
+""")
+
+
+# Explicación del gráfico
+st.write("""
+    Este gráfico de dispersión muestra la relación entre el `número de episodios` (`number_of_episodes`) y la `duración de los episodios` 
+    (`episode_run_time`) en minutos. Cada punto en el gráfico representa un programa de TV, con el número de episodios en el eje X y 
+    la duración promedio de los episodios en el eje Y. 
+    - Si hay una tendencia ascendente en el gráfico, podría indicar que los programas con más episodios tienden a tener una duración 
+    de episodio más larga.
+    - Si los puntos están dispersos sin un patrón claro, eso sugeriría que el número de episodios no tiene una relación directa con la 
+    duración de los episodios.
+""")
+
+
+
+
+
+
+# Histogram of Number of Episodes
+st.subheader('Histogram of Number of Episodes')
+# Filtrar los valores no nulos de la columna 'number_of_episodes'
+filtered_episodes = tv_data['number_of_episodes'].dropna()
+
+# Crear el histograma
+plt.figure(figsize=(8, 6))
+plt.hist(filtered_episodes, bins=30, color='lightgreen', edgecolor='black')
+plt.title('Distribution of Number of Episodes for TV Shows')
+plt.xlabel('Number of Episodes')
+plt.ylabel('Frequency')
+plt.grid(True)
+st.pyplot(plt)
+
+st.write("""
+    Este histograma muestra la distribución del número de episodios de los programas de TV en el dataset. 
+    Cada barra representa cuántos programas tienen un número específico de episodios. 
+    En este caso, podemos observar si la mayoría de los programas son de formato corto (con pocos episodios) 
+    o si la mayoría son series largas con muchos episodios. Un pico en las primeras barras podría indicar que la mayoría de los 
+    programas son de formato corto, mientras que una distribución más extendida sugiere que hay series más largas.
+""")
+
+
+
+# Scatter plot of Popularity vs Vote Average
+st.subheader('Scatter Plot of Popularity vs Vote Average')
+
+# Filtrar los valores no nulos de las columnas 'popularity' y 'vote_average'
+filtered_popularity = tv_data[['popularity', 'vote_average']].dropna()
+
+# Crear gráfico de dispersión
+plt.figure(figsize=(8, 6))
+plt.scatter(filtered_popularity['popularity'], filtered_popularity['vote_average'], alpha=0.6, color='purple')
+plt.title('Popularity vs Vote Average')
+plt.xlabel('Popularity')
+plt.ylabel('Vote Average')
+plt.grid(True)
+st.pyplot(plt)
+
+# Explicación del gráfico
+st.write("""
+    Este gráfico de dispersión muestra la relación entre la `popularidad` (Popularity) y la `calificación promedio` (Vote Average) de 
+    los programas de TV en el dataset. Cada punto en el gráfico representa un programa de TV, con la popularidad en el eje X y la 
+    calificación promedio en el eje Y. 
+    - Si los puntos están dispersos sin un patrón claro, podría indicar que no existe una relación directa entre la popularidad y la 
+    calificación promedio. 
+    - Si los puntos forman una tendencia, como una línea ascendente, eso podría sugerir que los programas con mayor popularidad 
+    tienen una mayor calificación promedio (o viceversa).
+""")
+
+
+
+
+
+
