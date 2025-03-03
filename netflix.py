@@ -16,6 +16,9 @@ def load_data(nrows = 500):
 #Create sidebar
 sidebar = st.sidebar
 sidebar.title('This is the sidebar')
+sidebar.image('ilian.jpeg')
+sidebar.write('Ilian Jesus Orduña Herrera')
+sidebar.write('zs22004363')
     
 #Load and display data if checkbox is selected  
 num_filmes = st.number_input("Número de filmes a recuperar:", min_value=1, value=500, step=50)

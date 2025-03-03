@@ -22,6 +22,9 @@ nyc_data = load_data(num_rows)
 # Sidebar
 sidebar = st.sidebar
 sidebar.title('Filters')
+sidebar.image('ilian.jpeg')
+sidebar.write('Ilian Jesus Orduña Herrera')
+sidebar.write('zs22004363')
 
 # Checkbox to show dataset
 agree = sidebar.checkbox('Show dataset')

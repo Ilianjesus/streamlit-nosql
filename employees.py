@@ -13,6 +13,12 @@ def load_data(n=500):
     return df.head(n)
 
 # Sidebar input for number of rows to display
+sidebar = st.sidebar
+sidebar.title('This is the sidebar')
+sidebar.image('ilian.jpeg')
+sidebar.write('Ilian Jesus Orduña Herrera')
+sidebar.write('zs22004363')
+
 num_rows = st.sidebar.number_input('Enter the number of rows to display', min_value=1, max_value=1000, value=500)
 
 # Sidebar checkbox to control whether to display the dataframe
