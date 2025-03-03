@@ -105,3 +105,17 @@ plt.ylabel('Duracion del episodio (minutos)')
 plt.grid(True)
 st.pyplot(plt)
 
+# Cantidad de programas por idioma
+st.subheader('Cantidad de programas por idioma')
+language_count = tv_data['original_language'].value_counts()
+
+# Crear el gráfico de barras
+plt.figure(figsize=(10, 6))
+language_count.plot(kind='bar', color='lightcoral', edgecolor='black')
+plt.title('Cantidad de programas por idioma')
+plt.xlabel('Idioma')
+plt.ylabel('Cantidad de programas')
+plt.xticks(rotation=45)
+plt.grid(True)
+st.pyplot(plt)
+
